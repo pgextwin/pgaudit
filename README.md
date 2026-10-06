@@ -14,7 +14,7 @@ pgAudit maintains a PostgreSQL-major-specific release line, so each PostgreSQL m
 | 17 | `17.1` | 17.1 | 17.11 |
 | 18 | `18.0` | 18.0 | 18.6 |
 
-The first pgextwin package-set release is planned as:
+The current pgextwin package-set Release is:
 
 ~~~text
 v18.0-windows.1
