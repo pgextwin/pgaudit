@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "source": "github",
+  "repository": "pgaudit/pgaudit",
+  "strategy": "github-releases-per-postgresql",
+  "prereleases": false,
+  "perPostgresql": {
+    "14": {
+      "tagPattern": "^(?P<version>1\\.6\\.[0-9]+)$"
+    },
+    "15": {
+      "tagPattern": "^(?P<version>1\\.7\\.[0-9]+)$"
+    },
+    "16": {
+      "tagPattern": "^(?P<version>16\\.[0-9]+)$"
+    },
+    "17": {
+      "tagPattern": "^(?P<version>17\\.[0-9]+)$"
+    },
+    "18": {
+      "tagPattern": "^(?P<version>18\\.[0-9]+)$"
+    },
+    "19": {
+      "tagPattern": "^(?P<version>19\\.[0-9]+)$",
+      "informational": true
+    }
+  }
+}
