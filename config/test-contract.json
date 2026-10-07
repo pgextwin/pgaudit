@@ -1,0 +1,37 @@
+{
+  "contractVersion": 2,
+  "extension": "pgaudit",
+  "smokeTest": {
+    "script": "windows/ci/smoke-test.ps1"
+  },
+  "runtimeRequirements": {
+    "extensionCreation": "optional",
+    "preload": "shared",
+    "backgroundWorker": false,
+    "clientExecutable": {
+      "required": false,
+      "packagePaths": []
+    }
+  },
+  "testSetup": {
+    "preload": "shared",
+    "backgroundWorker": false,
+    "settings": []
+  },
+  "coverage": {
+    "createExtension": "covered",
+    "backgroundWorker": "not-applicable",
+    "clientExecutable": "not-applicable",
+    "serverLogAssertions": "covered",
+    "upgrade": "not-covered"
+  },
+  "functionalScenarios": [
+    {
+      "id": "audit-log-read-write-ddl",
+      "description": "Executes DDL, INSERT, and SELECT operations and verifies corresponding DDL, WRITE, and READ AUDIT entries in the PostgreSQL server log.",
+      "evidence": [
+        "server-log"
+      ]
+    }
+  ]
+}
