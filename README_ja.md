@@ -14,7 +14,7 @@ pgAuditはPostgreSQLメジャーごとにrelease系列が異なるため、各Po
 | 17 | `17.1` | 17.1 | 17.11 |
 | 18 | `18.0` | 18.0 | 18.6 |
 
-現在公開中のpgextwin Release tagは最新系列を代表する `v18.0-windows.1` です。各ZIPは表の対応upstream refからbuildされています。
+現在公開中のpgextwin Release tagは最新系列を代表する `v18.0-windows.2` です。各ZIPは表の対応upstream refからbuildされています。
 
 ## 導入
 
