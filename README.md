@@ -17,7 +17,7 @@ pgAudit maintains a PostgreSQL-major-specific release line, so each PostgreSQL m
 The current pgextwin package-set Release is:
 
 ~~~text
-v18.0-windows.1
+v18.0-windows.2
 ~~~
 
 The release tag represents the newest supported pgAudit series. Each ZIP records the exact upstream ref and PostgreSQL version used to build it.
