@@ -4,15 +4,41 @@
   "upstream": {
     "repository": "pgaudit/pgaudit",
     "perPostgresql": {
-      "14": { "ref": "1.6.3", "version": "1.6.3" },
-      "15": { "ref": "1.7.1", "version": "1.7.1" },
-      "16": { "ref": "16.1", "version": "16.1" },
-      "17": { "ref": "17.1", "version": "17.1" },
-      "18": { "ref": "18.0", "version": "18.0" }
+      "14": {
+        "ref": "1.6.3",
+        "version": "1.6.3",
+        "commit": "abdb653a57228c28c52600aefa4852616eb6b0af"
+      },
+      "15": {
+        "ref": "1.7.1",
+        "version": "1.7.1",
+        "commit": "72da89c3fa02f3f2b9f3933214d91ad9c3428467"
+      },
+      "16": {
+        "ref": "16.1",
+        "version": "16.1",
+        "commit": "a81792e8a4ea8f7aaf75bd610fcc4c2f96650bdc"
+      },
+      "17": {
+        "ref": "17.1",
+        "version": "17.1",
+        "commit": "538f89a93d8fd0d8913f3d740cacaea7b7eb66d9"
+      },
+      "18": {
+        "ref": "18.0",
+        "version": "18.0",
+        "commit": "f39f8dbb15dc5bd4cbe5f1e5abe0d930ed7593a8"
+      }
     }
   },
   "postgresql": {
-    "majors": [14, 15, 16, 17, 18]
+    "majors": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ]
   },
   "windows": {
     "architecture": "x64"
