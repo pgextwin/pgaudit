@@ -1,45 +1,22 @@
-# pgAudit Windows バイナリ
+# pgAudit — Windows x64 バイナリ
 
-[English](README.md) | **日本語**
+[English](README.md) | 日本語
 
-このリポジトリでは、[pgAudit](https://github.com/pgaudit/pgaudit) の **非公式 Windows x64 バイナリ**を提供します。
+[pgAudit](https://github.com/pgaudit/pgaudit)の**非公式Windows x64バイナリ**です。PostgreSQLのセッション監査とオブジェクト監査のログを記録します。
 
-pgAuditはPostgreSQLメジャーごとにrelease系列が異なるため、各PostgreSQLに対応する公式tagを固定してbuildします。
+## ダウンロードと対応環境
 
-| PostgreSQL | upstream ref | pgAudit | 検証PostgreSQL |
-|---:|---|---:|---:|
-| 14 | `1.6.3` | 1.6.3 | 14.24 |
-| 15 | `1.7.1` | 1.7.1 | 15.19 |
-| 16 | `16.1` | 16.1 | 16.15 |
-| 17 | `17.1` | 17.1 | 17.11 |
-| 18 | `18.0` | 18.0 | 18.6 |
+[最新の公開Release](https://github.com/pgextwin/pgaudit/releases/latest)から、利用中のPostgreSQLメジャーバージョン向けのZIPを選んでください。[過去のReleases](https://github.com/pgextwin/pgaudit/releases)も確認できます。PostgreSQL **14〜18**向けの公開状況は[pgextwinカタログ](https://pgextwin.github.io/website/ja/)を参照してください。PostgreSQL 14のコミュニティサポートは2026年11月12日に終了します。
 
-現在公開中のpgextwin Release tagは最新系列を代表する `v18.0-windows.2` です。各ZIPは表の対応upstream refからbuildされています。
+## インストール
 
-## 導入
+1. バックアップを取り、[上流ドキュメント](https://github.com/pgaudit/pgaudit)で導入要件を確認します。
+2. 既存ファイルを置き換える前にPostgreSQLを停止します。対応するZIP内のlib/とshare/extension/のファイルを、PostgreSQLの同名ディレクトリへ配置します。
+3. pgAuditはPostgreSQLメジャーバージョンごとに上流のバージョンが異なります。postgresql.confのshared_preload_librariesへpgauditを追加して起動します。オブジェクト監査などで必要な場合は、上流の手順に従ってCREATE EXTENSION pgaudit;を実行してください。
+4. 設定の反映後にPostgreSQLを起動し、検証環境で動作を確認してください。
 
-1. PostgreSQLメジャーと一致するZIPを使用します。
-2. PostgreSQLを停止します。
-3. `lib/pgaudit.dll` をPostgreSQLの `lib` へコピーします。
-4. `share/extension/*` を `share/extension` へコピーします。
-5. `postgresql.conf` の `shared_preload_libraries` に `pgaudit` を追加します。
-6. PostgreSQLを再起動します。
-7. 対象databaseで `CREATE EXTENSION pgaudit;` を実行します。
-
-Windows固有の手順は [docs/windows_ja.md](docs/windows_ja.md) を参照してください。
-
-## CIの合格条件
-
-PG14〜18のすべてで、DLL buildだけでなく実際にPostgreSQLを起動し、pgAuditをpreloadしてExtensionを作成します。その後DDL・INSERT・SELECTを実行し、PostgreSQL server logに以下の実監査記録が出ることを確認します。
-
-- DDL / CREATE TABLE
-- WRITE / INSERT
-- READ / SELECT
-
-過去のWindows報告にあった「buildは通るが必要symbolを解決できない」「loadできても監査ログが正しく出ない」ケースを防ぐためです。
+ReleaseのSHA256SUMS.txtでZIPの整合性を確認できます。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無もReleaseで確認できます。
 
 ## ライセンス
 
-LICENSEはupstream pgAuditの内容をそのまま保持し、CIで固定tagのupstream LICENSEと完全一致を検証します。
-
-本バイナリはpgextwinによる非公式配布です。
+機能、設定、制限事項は[上流のpgAudit](https://github.com/pgaudit/pgaudit)を参照してください。本配布は上流公式のWindows版ではありません。ライセンスは同梱の表記に従います。
