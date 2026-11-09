@@ -12,10 +12,10 @@
 
 1. バックアップを取り、[上流ドキュメント](https://github.com/pgaudit/pgaudit)で導入要件を確認します。
 2. 既存ファイルを置き換える前にPostgreSQLを停止します。対応するZIP内のlib/とshare/extension/のファイルを、PostgreSQLの同名ディレクトリへ配置します。
-3. pgAuditはPostgreSQLメジャーバージョンごとに上流のバージョンが異なります。postgresql.confのshared_preload_librariesへpgauditを追加して起動します。オブジェクト監査などで必要な場合は、上流の手順に従ってCREATE EXTENSION pgaudit;を実行してください。
-4. 設定の反映後にPostgreSQLを起動し、検証環境で動作を確認してください。
+3. pgAuditはPostgreSQLメジャーバージョンごとに上流のバージョンが異なります。`postgresql.conf`の`shared_preload_libraries`にpgauditを追加します。
+4. 設定を反映してPostgreSQLを起動し、検証環境で動作を確認してください。オブジェクト監査などで必要な場合は、上流の手順に従って`CREATE EXTENSION pgaudit;`を実行してください。
 
-ReleaseのSHA256SUMS.txtでZIPの整合性を確認できます。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無もReleaseで確認できます。
+ZIPの整合性は、Releaseに掲載された`SHA256SUMS.txt`で確認できます。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無もReleaseで確認できます。
 
 ## ライセンス
 
