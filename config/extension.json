@@ -10,24 +10,24 @@
         "commit": "abdb653a57228c28c52600aefa4852616eb6b0af"
       },
       "15": {
-        "ref": "1.7.1",
-        "version": "1.7.1",
-        "commit": "72da89c3fa02f3f2b9f3933214d91ad9c3428467"
+        "ref": "1.7.2",
+        "version": "1.7.2",
+        "commit": "aa1b7f37869564fb3a51d281ebd5666da940dcd5"
       },
       "16": {
-        "ref": "16.1",
-        "version": "16.1",
-        "commit": "a81792e8a4ea8f7aaf75bd610fcc4c2f96650bdc"
+        "ref": "16.2",
+        "version": "16.2",
+        "commit": "25c56a8c778e63f320bb0ff813197dbb7a0eb8fa"
       },
       "17": {
-        "ref": "17.1",
-        "version": "17.1",
-        "commit": "538f89a93d8fd0d8913f3d740cacaea7b7eb66d9"
+        "ref": "17.2",
+        "version": "17.2",
+        "commit": "0ba8e31123ee511850c78ab678de7f7706ba79dd"
       },
       "18": {
-        "ref": "18.0",
-        "version": "18.0",
-        "commit": "f39f8dbb15dc5bd4cbe5f1e5abe0d930ed7593a8"
+        "ref": "18.1",
+        "version": "18.1",
+        "commit": "91b7db030d44c1b5585f851de1923eeec1b2d625"
       }
     }
   },
