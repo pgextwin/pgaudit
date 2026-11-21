@@ -4,11 +4,6 @@
   "upstream": {
     "repository": "pgaudit/pgaudit",
     "perPostgresql": {
-      "14": {
-        "ref": "1.6.3",
-        "version": "1.6.3",
-        "commit": "abdb653a57228c28c52600aefa4852616eb6b0af"
-      },
       "15": {
         "ref": "1.7.2",
         "version": "1.7.2",
@@ -28,16 +23,21 @@
         "ref": "18.1",
         "version": "18.1",
         "commit": "91b7db030d44c1b5585f851de1923eeec1b2d625"
+      },
+      "19": {
+        "ref": "19.0",
+        "version": "19.0",
+        "commit": "ee057ae20ec67997746aa10771d696c6406d7270"
       }
     }
   },
   "postgresql": {
     "majors": [
-      14,
       15,
       16,
       17,
-      18
+      18,
+      19
     ]
   },
   "windows": {
