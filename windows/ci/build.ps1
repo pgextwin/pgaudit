@@ -35,6 +35,13 @@ if ($control -notmatch "default_version\s*=\s*'([^']+)'") {
 }
 $pgauditVersion = $Matches[1]
 
+$pgVersion = & (Join-Path $PgRoot "bin\pg_config.exe") --version
+if ($LASTEXITCODE -ne 0) {
+    throw "Could not determine PostgreSQL version from pg_config."
+}
+# PostgreSQL 19 server headers require C11.
+$cStandard = if ($pgVersion -match '^PostgreSQL 19\.') { "/std:c11 " } else { "" }
+
 $source = Get-Content $sourcePath -Raw
 $exports = @("Pg_magic_func", "_PG_init")
 foreach ($match in [regex]::Matches($source, 'PG_FUNCTION_INFO_V1\(\s*([A-Za-z_][A-Za-z0-9_]*)\s*\)')) {
@@ -55,7 +62,7 @@ call "$vsDevCmd" -arch=x64 -host_arch=x64
 if errorlevel 1 exit /b %errorlevel%
 cd /d "$UpstreamDir"
 
-cl /nologo /O2 /MD /DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS /DPGAUDIT_VERSION=\""$pgauditVersion\"" ^
+cl /nologo /O2 /MD ${cStandard}/DWIN32 /DWIN32_NO_STATUS /D_CRT_SECURE_NO_WARNINGS /DPGAUDIT_VERSION=\""$pgauditVersion\"" ^
   /I"$PgRoot\include\server\port\win32_msvc" ^
   /I"$PgRoot\include\server\port\win32" ^
   /I"$PgRoot\include\server" ^
